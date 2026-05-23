@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Bengkel mobil profesional di Manado dan Minahasa, Sulawesi Utara. Spesialis tune-up, ganti oli, kaki-kaki, AC, scan ECU. Booking service online mudah dan cepat.">
+<meta name="keywords" content="bengkel mobil Minahasa, service mobil Manado, bengkel mobil Tomohon, bengkel mobil Sulawesi Utara, tune up Manado, ganti oli Minahasa">
+<title>WAS Garage — Bengkel Spesialis Mobil di Sulawesi Utara</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0a0a0a;
+    --dark: #141414;
+    --dark2: #1c1c1c;
+    --dark3: #252525;
+    --gray: #3a3a3a;
+    --gray2: #555;
+    --gray3: #888;
+    --light: #f0ede8;
+    --white: #fff;
+    --accent: #e8321a;
+    --accent2: #ff5c3a;
+    --accent-dark: #b02210;
+    --gold: #d4a842;
+    --font-display: 'Barlow Condensed', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+    --radius: 6px;
+    --radius-lg: 12px;
+    --transition: 0.25s ease;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--dark);
+    color: var(--light);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ===== SCROLLBAR ===== */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--dark); }
+  ::-webkit-scrollbar-thumb { background: var(--gray); border-radius: 3px; }
+
+  /* ===== NAV ===== */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%; height: 68px;
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    transition: var(--transition);
+  }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 22px; font-weight: 800; letter-spacing: 1px;
+    color: var(--white); text-decoration: none;
+  }
+  .nav-logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    text-decoration: none; color: var(--gray3);
+    font-size: 14px; font-weight: 500; letter-spacing: 0.3px;
+    transition: color var(--transition);
+  }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta {
+    background: var(--accent); color: var(--white);
+    padding: 9px 20px; border-radius: var(--radius);
+    font-size: 14px; font-weight: 500; text-decoration: none;
+    transition: background var(--transition), transform var(--transition);
+    white-space: nowrap;
+  }
+  .nav-cta:hover { background: var(--accent2); transform: translateY(-1px); }
+
+  .hamburger {
+    display: none; flex-direction: column; gap: 5px;
+    background: none; border: none; cursor: pointer; padding: 4px;
+  }
+  .hamburger span {
+    display: block; width: 24px; height: 2px;
+    background: var(--light); border-radius: 2px;
+    transition: var(--transition);
+  }
+  .mobile-menu {
+    display: none; position: fixed; top: 68px; left: 0; right: 0; z-index: 999;
+    background: var(--black); border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding: 1.5rem 5%; flex-direction: column; gap: 1.2rem;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    text-decoration: none; color: var(--light);
+    font-size: 16px; font-weight: 400;
+    border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 1rem;
+  }
+  .mobile-menu a:last-child { border-bottom: none; padding-bottom: 0; }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh; padding-top: 68px;
+    display: flex; align-items: center;
+    position: relative; overflow: hidden;
+    background: var(--black);
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 60% at 70% 50%, rgba(232,50,26,0.12) 0%, transparent 70%),
+      repeating-linear-gradient(90deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 80px),
+      repeating-linear-gradient(0deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 80px);
+  }
+  .hero-number {
+    position: absolute; right: 4%; top: 50%; transform: translateY(-50%);
+    font-family: var(--font-display); font-size: clamp(180px, 22vw, 320px);
+    font-weight: 800; color: rgba(255,255,255,0.03); line-height: 1;
+    user-select: none; pointer-events: none;
+  }
+  .hero-content {
+    position: relative; z-index: 2;
+    padding: 5rem 5%; max-width: 760px;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(232,50,26,0.15); border: 1px solid rgba(232,50,26,0.3);
+    color: var(--accent2); font-size: 12px; font-weight: 500; letter-spacing: 1.5px;
+    text-transform: uppercase; padding: 6px 14px; border-radius: 99px;
+    margin-bottom: 1.5rem;
+  }
+  .hero-badge::before { content: ''; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: blink 1.5s infinite; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+  .hero h1 {
+    font-family: var(--font-display);
+    font-size: clamp(48px, 7vw, 96px);
+    font-weight: 800; line-height: 0.95;
+    letter-spacing: -1px;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+  }
+  .hero h1 em { font-style: normal; color: var(--accent); }
+  .hero-sub {
+    font-size: 17px; font-weight: 300; color: var(--gray3);
+    max-width: 520px; margin-bottom: 2.5rem; line-height: 1.7;
+  }
+  .hero-sub strong { color: var(--light); font-weight: 500; }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 3.5rem; }
+  .btn-primary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--accent); color: var(--white);
+    padding: 14px 28px; border-radius: var(--radius);
+    font-size: 15px; font-weight: 500; text-decoration: none;
+    transition: all var(--transition);
+    border: none; cursor: pointer;
+  }
+  .btn-primary:hover { background: var(--accent2); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,50,26,0.35); }
+  .btn-secondary {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: transparent; color: var(--light);
+    padding: 14px 28px; border-radius: var(--radius);
+    font-size: 15px; font-weight: 500; text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.18);
+    transition: all var(--transition);
+  }
+  .btn-secondary:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.35); }
+  .hero-stats {
+    display: flex; gap: 2.5rem; flex-wrap: wrap;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 2rem;
+  }
+  .hero-stat-num {
+    font-family: var(--font-display); font-size: 36px; font-weight: 700;
+    color: var(--white); line-height: 1;
+  }
+  .hero-stat-num span { color: var(--accent); }
+  .hero-stat-label { font-size: 12px; color: var(--gray3); margin-top: 4px; letter-spacing: 0.5px; }
+
+  /* ===== TICKER ===== */
+  .ticker {
+    background: var(--accent); overflow: hidden;
+    padding: 10px 0; white-space: nowrap;
+  }
+  .ticker-track {
+    display: inline-flex; gap: 0;
+    animation: ticker 25s linear infinite;
+  }
+  .ticker-item {
+    font-family: var(--font-display); font-size: 13px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.9);
+    padding: 0 2.5rem;
+  }
+  .ticker-item::after { content: '◆'; margin-left: 2.5rem; opacity: 0.5; }
+  @keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+  /* ===== SECTIONS COMMON ===== */
+  section { padding: 6rem 5%; }
+  .section-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 11px; font-weight: 600; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .section-tag::before { content: ''; width: 20px; height: 2px; background: var(--accent); }
+  .section-title {
+    font-family: var(--font-display); font-size: clamp(32px, 5vw, 52px);
+    font-weight: 700; color: var(--white); line-height: 1.05;
+    margin-bottom: 1rem;
+  }
+  .section-desc { font-size: 16px; color: var(--gray3); max-width: 520px; line-height: 1.7; }
+
+  /* ===== LAYANAN ===== */
+  #layanan { background: var(--dark2); }
+  .layanan-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 3rem; flex-wrap: wrap; gap: 1.5rem; }
+  .layanan-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1px; background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: var(--radius-lg); overflow: hidden;
+  }
+  .layanan-card {
+    background: var(--dark2); padding: 2rem 1.75rem;
+    transition: background var(--transition);
+    cursor: default;
+    position: relative; overflow: hidden;
+  }
+  .layanan-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0;
+    width: 0; height: 2px; background: var(--accent);
+    transition: width 0.35s ease;
+  }
+  .layanan-card:hover { background: var(--dark3); }
+  .layanan-card:hover::after { width: 100%; }
+  .layanan-icon {
+    width: 48px; height: 48px; border-radius: var(--radius);
+    background: rgba(232,50,26,0.1); border: 1px solid rgba(232,50,26,0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; margin-bottom: 1.2rem;
+  }
+  .layanan-name {
+    font-family: var(--font-display); font-size: 20px; font-weight: 700;
+    color: var(--white); margin-bottom: 0.5rem; letter-spacing: 0.3px;
+  }
+  .layanan-desc { font-size: 14px; color: var(--gray3); line-height: 1.6; }
+  .layanan-tag {
+    display: inline-block; margin-top: 1rem;
+    font-size: 11px; font-weight: 500; letter-spacing: 0.5px;
+    padding: 4px 10px; border-radius: 99px;
+    background: rgba(255,255,255,0.05); color: var(--gray3);
+  }
+
+  /* ===== BOOKING ===== */
+  #booking { background: var(--black); }
+  .booking-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .booking-info { position: sticky; top: 100px; }
+  .booking-info h2 { margin-bottom: 1rem; }
+  .booking-features { margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; }
+  .booking-feat {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 1rem 1.25rem;
+    background: var(--dark2); border-radius: var(--radius);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .booking-feat-icon {
+    width: 36px; height: 36px; border-radius: var(--radius);
+    background: rgba(232,50,26,0.12); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center; font-size: 17px;
+  }
+  .booking-feat strong { display: block; font-size: 14px; color: var(--white); margin-bottom: 2px; }
+  .booking-feat span { font-size: 13px; color: var(--gray3); }
+
+  .booking-form {
+    background: var(--dark2); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius-lg); padding: 2rem;
+  }
+  .form-title { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--white); margin-bottom: 1.5rem; }
+  .form-group { margin-bottom: 1.2rem; }
+  .form-group label { display: block; font-size: 13px; font-weight: 500; color: var(--gray3); margin-bottom: 6px; letter-spacing: 0.3px; }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%; background: var(--dark3); border: 1px solid rgba(255,255,255,0.1);
+    color: var(--light); border-radius: var(--radius); padding: 11px 14px;
+    font-family: var(--font-body); font-size: 14px;
+    transition: border-color var(--transition);
+    outline: none; appearance: none;
+  }
+  .form-group select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+  .form-group textarea { resize: vertical; min-height: 90px; }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--accent); }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: var(--gray2); }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .btn-submit {
+    width: 100%; padding: 14px; background: var(--accent);
+    color: var(--white); border: none; border-radius: var(--radius);
+    font-family: var(--font-body); font-size: 15px; font-weight: 500;
+    cursor: pointer; transition: all var(--transition);
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  .btn-submit:hover { background: var(--accent2); transform: translateY(-1px); }
+  .form-note { font-size: 12px; color: var(--gray2); text-align: center; margin-top: 1rem; }
+
+  /* ===== TENTANG ===== */
+  #tentang { background: var(--dark); }
+  .tentang-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .tentang-visual {
+    position: relative;
+  }
+  .tentang-img-wrap {
+    background: var(--dark2); border-radius: var(--radius-lg);
+    overflow: hidden; aspect-ratio: 4/3;
+    border: 1px solid rgba(255,255,255,0.08);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .tentang-img-placeholder {
+    display: flex; flex-direction: column; align-items: center; gap: 12px;
+    color: var(--gray2); font-size: 14px;
+  }
+  .tentang-img-placeholder .ph-icon { font-size: 48px; opacity: 0.3; }
+  .tentang-accent-box {
+    position: absolute; bottom: -1.5rem; right: -1.5rem;
+    background: var(--accent); color: var(--white);
+    padding: 1.25rem 1.5rem; border-radius: var(--radius-lg);
+    text-align: center;
+  }
+  .tentang-accent-num { font-family: var(--font-display); font-size: 42px; font-weight: 800; line-height: 1; }
+  .tentang-accent-label { font-size: 12px; opacity: 0.85; margin-top: 2px; }
+  .tentang-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 1.5rem; }
+  .tentang-tag {
+    padding: 6px 14px; border-radius: 99px;
+    border: 1px solid rgba(255,255,255,0.12); color: var(--gray3); font-size: 13px;
+  }
+  .sertifikasi {
+    margin-top: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+  }
+  .serti-item {
+    padding: 1rem; background: var(--dark2); border-radius: var(--radius);
+    border: 1px solid rgba(255,255,255,0.06);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .serti-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+  .serti-text { font-size: 13px; color: var(--light); }
+
+  /* ===== TESTIMONI ===== */
+  #testimoni { background: var(--dark2); }
+  .testi-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 3rem; }
+  .testi-card {
+    background: var(--dark3); border-radius: var(--radius-lg);
+    border: 1px solid rgba(255,255,255,0.06); padding: 1.75rem;
+    transition: border-color var(--transition), transform var(--transition);
+  }
+  .testi-card:hover { border-color: rgba(232,50,26,0.3); transform: translateY(-3px); }
+  .testi-stars { display: flex; gap: 3px; margin-bottom: 1rem; }
+  .star { color: var(--gold); font-size: 15px; }
+  .testi-text { font-size: 14px; color: var(--gray3); line-height: 1.7; margin-bottom: 1.5rem; font-style: italic; }
+  .testi-author { display: flex; align-items: center; gap: 10px; }
+  .testi-avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--dark2); border: 1px solid rgba(255,255,255,0.12);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--accent);
+  }
+  .testi-name { font-size: 14px; font-weight: 500; color: var(--white); }
+  .testi-vehicle { font-size: 12px; color: var(--gray3); margin-top: 1px; }
+
+  /* ===== GALERI ===== */
+  #galeri { background: var(--black); }
+  .galeri-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 12px; margin-top: 3rem;
+  }
+  .galeri-item {
+    background: var(--dark2); border-radius: var(--radius);
+    overflow: hidden; border: 1px solid rgba(255,255,255,0.06);
+    aspect-ratio: 4/3; position: relative;
+    display: flex; align-items: center; justify-content: center;
+    transition: transform var(--transition);
+  }
+  .galeri-item:hover { transform: scale(1.02); }
+  .galeri-item.big { grid-column: span 2; aspect-ratio: 16/9; }
+  .galeri-placeholder {
+    display: flex; flex-direction: column; align-items: center;
+    gap: 8px; color: var(--gray2); font-size: 13px;
+  }
+  .galeri-label {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    padding: 1rem 1rem 0.75rem; font-size: 13px; color: var(--light); font-weight: 500;
+  }
+
+  /* ===== LOKASI ===== */
+  #lokasi { background: var(--dark); }
+  .lokasi-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .lokasi-info { display: flex; flex-direction: column; gap: 1.5rem; }
+  .info-card {
+    display: flex; gap: 14px; align-items: flex-start;
+    padding: 1.25rem; background: var(--dark2);
+    border-radius: var(--radius); border: 1px solid rgba(255,255,255,0.07);
+  }
+  .info-icon {
+    width: 42px; height: 42px; border-radius: var(--radius);
+    background: rgba(232,50,26,0.12); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+  }
+  .info-label { font-size: 12px; color: var(--gray3); margin-bottom: 4px; letter-spacing: 0.5px; text-transform: uppercase; }
+  .info-value { font-size: 15px; color: var(--white); font-weight: 400; line-height: 1.5; }
+  .info-value a { color: var(--accent2); text-decoration: none; }
+  .lokasi-map {
+    background: var(--dark2); border-radius: var(--radius-lg);
+    border: 1px solid rgba(255,255,255,0.08); overflow: hidden;
+    min-height: 360px; display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 12px;
+  }
+  .map-placeholder { font-size: 14px; color: var(--gray3); text-align: center; }
+  .map-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--accent); color: var(--white);
+    padding: 10px 20px; border-radius: var(--radius);
+    font-size: 14px; font-weight: 500; text-decoration: none;
+    transition: background var(--transition);
+  }
+  .map-btn:hover { background: var(--accent2); }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--black); border-top: 1px solid rgba(255,255,255,0.06);
+    padding: 4rem 5% 2rem;
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem; margin-bottom: 3rem;
+  }
+  .footer-brand-name {
+    font-family: var(--font-display); font-size: 24px; font-weight: 800;
+    color: var(--white); margin-bottom: 0.75rem;
+  }
+  .footer-brand-name span { color: var(--accent); }
+  .footer-brand-desc { font-size: 14px; color: var(--gray3); line-height: 1.7; margin-bottom: 1.5rem; }
+  .footer-social { display: flex; gap: 10px; }
+  .footer-social a {
+    width: 38px; height: 38px; border-radius: var(--radius);
+    background: var(--dark2); border: 1px solid rgba(255,255,255,0.08);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gray3); font-size: 16px; text-decoration: none;
+    transition: all var(--transition);
+  }
+  .footer-social a:hover { background: var(--accent); color: var(--white); border-color: var(--accent); }
+  .footer-col-title { font-size: 13px; font-weight: 600; color: var(--white); letter-spacing: 0.5px; margin-bottom: 1.2rem; }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .footer-links a { font-size: 14px; color: var(--gray3); text-decoration: none; transition: color var(--transition); }
+  .footer-links a:hover { color: var(--accent2); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.06);
+    padding-top: 1.5rem; display: flex;
+    justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-copy { font-size: 13px; color: var(--gray2); }
+  .footer-copy span { color: var(--accent); }
+
+  /* ===== FLOATING WA ===== */
+  .wa-float {
+    position: fixed; bottom: 2rem; right: 2rem; z-index: 999;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .wa-label {
+    background: var(--dark2); color: var(--white);
+    padding: 8px 14px; border-radius: var(--radius);
+    font-size: 13px; font-weight: 500;
+    border: 1px solid rgba(255,255,255,0.1);
+    animation: fadeIn 0.4s ease 1s both;
+    white-space: nowrap;
+  }
+  .wa-btn {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: #25d366; display: flex; align-items: center; justify-content: center;
+    text-decoration: none; font-size: 28px;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    transition: transform var(--transition);
+    animation: pulseWa 2s infinite 1s;
+  }
+  .wa-btn:hover { transform: scale(1.1); }
+  @keyframes pulseWa { 0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.4)} 50%{box-shadow:0 4px 32px rgba(37,211,102,0.7)} }
+  @keyframes fadeIn { from{opacity:0;transform:translateX(10px)} to{opacity:1;transform:translateX(0)} }
+
+  /* ===== SCROLL REVEAL ===== */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    .booking-layout, .tentang-layout, .lokasi-layout { grid-template-columns: 1fr; }
+    .booking-info { position: static; }
+    .tentang-accent-box { position: static; margin-top: 1rem; display: inline-flex; align-items: center; gap: 1rem; }
+    .tentang-accent-num { font-size: 30px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .galeri-grid { grid-template-columns: 1fr 1fr; }
+    .galeri-item.big { grid-column: span 2; }
+  }
+  @media (max-width: 640px) {
+    section { padding: 4rem 5%; }
+    .nav-links, .nav-cta { display: none; }
+    .hamburger { display: flex; }
+    .hero h1 { font-size: 52px; }
+    .hero-stats { gap: 1.5rem; }
+    .form-row { grid-template-columns: 1fr; }
+    .sertifikasi { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .galeri-grid { grid-template-columns: 1fr; }
+    .galeri-item.big { grid-column: span 1; aspect-ratio: 4/3; }
+    .wa-label { display: none; }
+    .layanan-header { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">WAS<span>GARAGE</span></a>
+  <ul class="nav-links">
+    <li><a href="#layanan">Layanan</a></li>
+    <li><a href="#tentang">Tentang</a></li>
+    <li><a href="#galeri">Galeri</a></li>
+    <li><a href="#testimoni">Testimoni</a></li>
+    <li><a href="#lokasi">Lokasi</a></li>
+  </ul>
+  <a href="#booking" class="nav-cta">Booking Service</a>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#layanan" onclick="closeMenu()">Layanan</a>
+  <a href="#tentang" onclick="closeMenu()">Tentang Kami</a>
+  <a href="#galeri" onclick="closeMenu()">Galeri</a>
+  <a href="#testimoni" onclick="closeMenu()">Testimoni</a>
+  <a href="#lokasi" onclick="closeMenu()">Lokasi & Kontak</a>
+  <a href="#booking" onclick="closeMenu()" style="color:var(--accent);font-weight:500">🔧 Booking Service</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-number">AUTO</div>
+  <div class="hero-content">
+    <div class="hero-badge">Service - Maintenance - Sparepart</div>
+    <h1>WAS GARAGE<br>SERVICE<br><em>MOBIL</em></h1>
+    <p class="hero-sub">
+      Bengkel profesional untuk semua merek kendaraan.
+      <strong>Teknisi berpengalaman</strong> menangani mobil Eropa & Asia.
+      Melayani <strong>Manado, Tomohon, Tondano, dan sekitarnya.</strong>
+    </p>
+    <div class="hero-actions">
+      <a href="#booking" class="btn-primary">🔧 Booking Service Sekarang</a>
+      <a href="https://wa.me/6281356557167" class="btn-secondary">💬 Chat WhatsApp</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">12<span>+</span></div>
+        <div class="hero-stat-label">Tahun Pengalaman</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">2.500<span>+</span></div>
+        <div class="hero-stat-label">Kendaraan Ditangani</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">98<span>%</span></div>
+        <div class="hero-stat-label">Pelanggan Puas</div>
+      </div>
+      <div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span class="ticker-item">Tune-Up Mesin</span>
+    <span class="ticker-item">Ganti Oli & Filter</span>
+    <span class="ticker-item">Perbaikan Kaki-Kaki</span>
+    <span class="ticker-item">Service AC Mobil</span>
+    <span class="ticker-item">Diagnostic Scan ECU / Komputer</span>
+    <span class="ticker-item">Rem & Kopling</span>
+    <span class="ticker-item">Garansi Pengerjaan</span>
+    <span class="ticker-item">Tune-Up Mesin</span>
+    <span class="ticker-item">Ganti Oli & Filter</span>
+    <span class="ticker-item">Perbaikan Kaki-Kaki</span>
+    <span class="ticker-item">Service AC Mobil</span>
+    <span class="ticker-item">Diagnostic Scan ECU / Komputer</span>
+    <span class="ticker-item">Rem & Kopling</span>
+    <span class="ticker-item">Garansi Pengerjaan</span>
+  </div>
+</div>
+
+<!-- LAYANAN -->
+<section id="layanan">
+  <div class="layanan-header reveal">
+    <div>
+      <div class="section-tag">Layanan Kami</div>
+      <h2 class="section-title">Semua Kebutuhan<br>Kendaraan Anda</h2>
+    </div>
+    <p class="section-desc">Kami menangani berbagai jenis perbaikan dan perawatan dengan standar tinggi dan suku cadang berkualitas.</p>
+  </div>
+  <div class="layanan-grid reveal">
+    <div class="layanan-card">
+      <div class="layanan-icon">🔧</div>
+      <div class="layanan-name">Tune-Up Mesin</div>
+      <div class="layanan-desc">Perawatan berkala mesin untuk performa optimal, busi, filter udara, dan sistem injeksi.</div>
+      <span class="layanan-tag">Mulai Rp 250.000</span>
+    </div>
+    <div class="layanan-card">
+      <div class="layanan-icon">🛢️</div>
+      <div class="layanan-name">Ganti Oli & Filter</div>
+      <div class="layanan-desc">Penggantian oli mesin, transmisi, gardan, dan filter dengan produk bermerek terpercaya.</div>
+      <span class="layanan-tag">Mulai Rp 150.000</span>
+    </div>
+    <div class="layanan-card">
+      <div class="layanan-icon">🚗</div>
+      <div class="layanan-name">Perbaikan Kaki-Kaki</div>
+      <div class="layanan-desc">Spooring, balancing, penggantian shockbreaker, tie rod, dan ball joint untuk kenyamanan berkendara.</div>
+      <span class="layanan-tag">Mulai Rp 350.000</span>
+    </div>
+    <div class="layanan-card">
+      <div class="layanan-icon">❄️</div>
+      <div class="layanan-name">Service AC Mobil</div>
+      <div class="layanan-desc">Cuci evaporator, isi freon, perbaikan kompresor, dan pengecekan sistem pendingin menyeluruh.</div>
+      <span class="layanan-tag">Mulai Rp 200.000</span>
+    </div>
+    <div class="layanan-card">
+      <div class="layanan-icon">💻</div>
+      <div class="layanan-name">Diagnostic Scan ECU / Komputer</div>
+      <div class="layanan-desc">Diagnosa sistem elektronik kendaraan modern menggunakan alat scanner profesional multi-merek.</div>
+      <span class="layanan-tag">Mulai Rp 100.000</span>
+    </div>
+    <div class="layanan-card">
+      <div class="layanan-icon">🛑</div>
+      <div class="layanan-name">Rem & Kopling</div>
+      <div class="layanan-desc">Penggantian kampas rem, cakram, minyak rem, dan sistem kopling untuk keamanan berkendara.</div>
+      <span class="layanan-tag">Mulai Rp 300.000</span>
+    </div>
+    <div class="layanan-card">
+      <div class="layanan-icon">⚡</div>
+      <div class="layanan-name">Kelistrikan Mobil</div>
+      <div class="layanan-desc">Perbaikan sistem kelistrikan, aki, alternator, starter, dan sensor-sensor kendaraan.</div>
+      <span class="layanan-tag">Mulai Rp 150.000</span>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section id="booking">
+  <div class="booking-layout">
+    <div class="booking-info reveal">
+      <div class="section-tag">Booking Online</div>
+      <h2 class="section-title">Jadwalkan<br>Service Anda</h2>
+      <p class="section-desc">Tidak perlu antri lama. Booking slot service Anda sekarang dan datang tepat waktu.</p>
+      <div class="booking-features">
+        <div class="booking-feat">
+          <div class="booking-feat-icon">📅</div>
+          <div>
+            <strong>Pilih Waktu Sendiri</strong>
+            <span>Tentukan tanggal dan slot waktu yang paling sesuai jadwal Anda.</span>
+          </div>
+        </div>
+        <div class="booking-feat">
+          <div class="booking-feat-icon">✅</div>
+          <div>
+            <strong>Konfirmasi via WhatsApp</strong>
+            <span>Tim kami akan mengkonfirmasi booking Anda dalam 1x30 menit.</span>
+          </div>
+        </div>
+        <div class="booking-feat">
+          <div class="booking-feat-icon">🛡️</div>
+          <div>
+            <strong>Garansi Pengerjaan</strong>
+            <span>Setiap pekerjaan bergaransi 30 hari atau 1.000 km untuk ketenangan pikiran Anda.</span>
+          </div>
+        </div>
+        <div class="booking-feat">
+          <div class="booking-feat-icon">💰</div>
+          <div>
+            <strong>Estimasi Biaya Transparan</strong>
+            <span>Kami memberikan estimasi biaya sebelum pengerjaan dimulai. Tanpa biaya tersembunyi.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="booking-form reveal">
+      <div class="form-title">Form Booking Service</div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Nama Lengkap</label>
+          <input type="text" placeholder="Contoh: Budi Santoso">
+        </div>
+        <div class="form-group">
+          <label>Nomor WhatsApp</label>
+          <input type="tel" placeholder="0812-xxxx-xxxx">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Merek & Model Kendaraan</label>
+          <input type="text" placeholder="Contoh: Toyota Avanza">
+        </div>
+        <div class="form-group">
+          <label>Nomor Plat</label>
+          <input type="text" placeholder="DB xxxx xx">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Jenis Layanan</label>
+        <select>
+          <option value="">— Pilih Layanan —</option>
+          <option>Tune-Up Mesin</option>
+          <option>Ganti Oli & Filter</option>
+          <option>Perbaikan Kaki-Kaki</option>
+          <option>Service AC Mobil</option>
+          <option>Diagnostic Scan ECU / Komputer</option>
+          <option>Rem & Kopling</option>
+          <option>Kelistrikan Mobil</option>
+         <option>Lainnya / Konsultasi</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Tanggal Kedatangan</label>
+          <input type="date">
+        </div>
+        <div class="form-group">
+          <label>Jam Pilihan</label>
+          <select>
+            <option value="">— Pilih Jam —</option>
+            <option>08:00 – 09:00</option>
+            <option>09:00 – 10:00</option>
+            <option>10:00 – 11:00</option>
+            <option>11:00 – 12:00</option>
+            <option>13:00 – 14:00</option>
+            <option>14:00 – 15:00</option>
+            <option>15:00 – 16:00</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Keluhan / Catatan Tambahan (opsional)</label>
+        <textarea placeholder="Contoh: Suara aneh saat mengerem, AC kurang dingin, dll."></textarea>
+      </div>
+      <button class="btn-submit" onclick="submitBooking()">
+        🔧 Kirim Permintaan Booking
+      </button>
+      <p class="form-note">Dengan mengirim form ini, Anda setuju dihubungi tim kami via WhatsApp untuk konfirmasi.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TENTANG -->
+<section id="tentang">
+  <div class="tentang-layout">
+    <div class="tentang-visual reveal">
+      <div class="tentang-img-wrap">
+        <div class="tentang-img-placeholder">
+          <div class="ph-icon">🔩</div>
+          <span>Foto Bengkel / Tim Teknisi</span>
+          <span style="font-size:12px;color:var(--gray2)"><img src="https://i.postimg.cc/xdyNbxdR/timteknisi-01.jpg"></span>
+        </div>
+      </div>
+      <div class="tentang-accent-box">
+        <div class="tentang-accent-num">2012</div>
+        <div class="tentang-accent-label">Berdiri Sejak</div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="section-tag">Tentang Kami</div>
+      <h2 class="section-title">Bengkel Dengan<br>Standar Tinggi</h2>
+      <p style="font-size:15px;color:var(--gray3);line-height:1.8;margin-top:1rem">
+        WAS Garage berdiri sejak Tahun.. di Manado, Sulawesi Utara. Kami hadir dengan komitmen memberikan layanan bengkel berkualitas tinggi yang dapat dipercaya oleh setiap pemilik kendaraan.
+      </p>
+      <p style="font-size:15px;color:var(--gray3);line-height:1.8;margin-top:0.75rem">
+        Dengan tim teknisi berpengalaman yang terus mengikuti perkembangan teknologi otomotif, kami siap menangani berbagai merek dan model kendaraan — dari Eropa hingga Asia, dari sedan hingga SUV.
+      </p>
+      <div class="tentang-tags">
+        <span class="tentang-tag">Toyota Specialist</span>
+        <span class="tentang-tag">Honda Expert</span>
+        <span class="tentang-tag">Mitsubishi</span>
+        <span class="tentang-tag">Suzuki</span>
+        <span class="tentang-tag">BMW / Mercedes</span>
+        <span class="tentang-tag">Daihatsu</span>
+      </div>
+      <div class="sertifikasi">
+        <div class="serti-item"><div class="serti-dot"></div><span class="serti-text">Teknisi Berpengalaman</span></div>
+        <div class="serti-item"><div class="serti-dot"></div><span class="serti-text">Alat Diagnostic OBD2</span></div>
+        <div class="serti-item"><div class="serti-dot"></div><span class="serti-text">Spare Part Original</span></div>
+        <div class="serti-item"><div class="serti-dot"></div><span class="serti-text">Garansi Service</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONI -->
+<section id="testimoni">
+  <div class="reveal" style="text-align:center;max-width:540px;margin:0 auto">
+    <div class="section-tag" style="justify-content:center">Testimoni</div>
+    <h2 class="section-title">Yang Mereka Katakan</h2>
+    <p class="section-desc" style="margin:0 auto">Kepercayaan pelanggan adalah prioritas utama kami.</p>
+  </div>
+  <div class="testi-grid reveal">
+    <div class="testi-card">
+      <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testi-text">"Sudah langganan di sini sejak 5 tahun lalu. Teknisinya jujur, tidak asal ganti parts. Harga sesuai dan pekerjaan rapi. Rekomen banget untuk warga Manado sekitarnya!"</p>
+      <div class="testi-author">
+        <div class="testi-avatar">RK</div>
+        <div>
+          <div class="testi-name">Jefri</div>
+          <div class="testi-vehicle">Rubicon 2020</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testi-text">"AC mobil saya bermasalah dan sudah coba di beberapa bengkel tidak kelar. Datang ke sini langsung ketemu masalahnya dan selesai dalam sehari. Mantap!"</p>
+      <div class="testi-author">
+        <div class="testi-avatar">SL</div>
+        <div>
+          <div class="testi-name">Sintia Lumintang</div>
+          <div class="testi-vehicle">Honda HR-V 2019</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testi-text">"Sistem booking online sangat membantu, tidak perlu antri lama. Teknisinya profesional dan dijelaskan dengan baik apa yang perlu diganti dan kenapa. Transparan banget."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">FP</div>
+        <div>
+          <div class="testi-name">Frengky Paat</div>
+          <div class="testi-vehicle">Mitsubishi Xpander 2021</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testi-text">"Kaki-kaki Innova saya sudah bermasalah lama. Setelah dikerjakan di sini, suspensi kembali nyaman dan tidak ada bunyi aneh. Garansinya juga dipegang betul."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">JM</div>
+        <div>
+          <div class="testi-name">James Mangkey</div>
+          <div class="testi-vehicle">Toyota Innova 2018</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testi-text">"Selain pelayanan yang ramah, tempat bengkelnya juga bersih dan nyaman. Ada ruang tunggu yang enak. Tidak merasa tersiksa menunggu, bahkan kelihatan bagaimana kerja teknisi."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">WS</div>
+        <div>
+          <div class="testi-name">Winda Supit</div>
+          <div class="testi-vehicle">Suzuki Ertiga 2022</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">⭐⭐⭐⭐⭐</div>
+      <p class="testi-text">"Scan ECU BMW saya yang susah dideteksi bengkel lain, di sini bisa. Alat diagnosticnya lengkap. Harganya juga wajar untuk kualitas yang diberikan."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">AN</div>
+        <div>
+          <div class="testi-name">Andreas Nangoy</div>
+          <div class="testi-vehicle">BMW 320i 2017</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERI -->
+<section id="galeri">
+  <div class="reveal" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:1.5rem;margin-bottom:3rem">
+    <div>
+      <div class="section-tag">Galeri</div>
+      <h2 class="section-title">Fasilitas & Area<br>Bengkel Kami</h2>
+    </div>
+    <p class="section-desc">Bengkel bersih, terorganisir, dan dilengkapi peralatan modern untuk penanganan optimal kendaraan Anda.</p>
+  </div>
+  <div class="galeri-grid reveal">
+    <div class="galeri-item big">
+      <div class="galeri-placeholder"><img src="https://i.postimg.cc/brvnPxps/ruangutama-01.jpg" alt="Area Utama" style="width:100%;height:100%;object-fit:cover"><br><span>Foto Area Utama Bengkel</span></div>
+      <div class="galeri-label">Area Utama Bengkel</div>
+    </div>
+    <div class="galeri-item">
+      <div class="galeri-placeholder"><img src="https://i.postimg.cc/fTL7QNR2/diagnosisscan-01.jpg.jpg" alt="Alat Diagnostic" style="width:100%;height:100%;object-fit:cover"><br><span>Alat Diagnostic</span></div>
+      <div class="galeri-label">Ruang Diagnostic ECU</div>
+    </div>
+    <div class="galeri-item">
+      <div class="galeri-placeholder"><img src="https://i.postimg.cc/xdyNbxdR/timteknisi-01.jpg" alt="Tim Teknisi" style="width:100%;height:100%;object-fit:cover"><br><span>Tim Teknisi</span></div>
+      <div class="galeri-label">Tim Teknisi Berpengalaman</div>
+    </div>
+   <div class="galeri-item">
+      <div class="galeri-placeholder">📦<br><span>Gudang Sparepart</span></div>
+      <div class="galeri-label">Stok Sparepart Original</div>
+    </div>
+  </div>
+  <p style="font-size:13px;color:var(--gray2);margin-top:1rem;text-align:center">
+    * Ganti kotak abu-abu di atas dengan foto asli bengkel Anda menggunakan tag &lt;img src="..."&gt;
+  </p>
+</section>
+
+<!-- LOKASI -->
+<section id="lokasi">
+  <div class="reveal" style="margin-bottom:3rem">
+    <div class="section-tag">Lokasi & Kontak</div>
+    <h2 class="section-title">Temukan Kami</h2>
+  </div>
+  <div class="lokasi-layout">
+    <div class="lokasi-info reveal">
+      <div class="info-card">
+        <div class="info-icon">📍</div>
+        <div>
+          <div class="info-label">Alamat</div>
+          <div class="info-value">Jl. Siswa (SMK Kr. Getsemani) Sario<br>Kota Manado, Sulawesi Utara 95614</div>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">🕐</div>
+        <div>
+          <div class="info-label">Jam Operasional</div>
+          <div class="info-value">
+            Senin – Sabtu: 08.00 – 17.00 WITA<br>
+         </div>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">📞</div>
+        <div>
+          <div class="info-label">Telepon & WhatsApp</div>
+          <div class="info-value">
+            <a href="tel:+6281356557167">+62 81356557167</a><br>
+            <a href="https://wa.me/6281356557167">Chat WhatsApp ›</a>
+          </div>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">📧</div>
+        <div>
+          <div class="info-label">Email</div>
+          <div class="info-value"><a href="wanlisorongan@gmail.com">W</a></div>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-icon">🌐</div>
+        <div>
+          <div class="info-label">Area Layanan</div>
+          <div class="info-value">Manado · Tomohon · Tondano · Airmadidi · Bitung  · Minahasa</div>
+        </div>
+      </div>
+    </div>
+    <div class="lokasi-map reveal">
+      <div class="galeri-placeholder">
+        <div style="font-size:48px">📍</div>
+        <div class="map-placeholder">
+          <strong style="color:var(--white);display:block;margin-bottom:8px">Peta Lokasi Bengkel</strong>
+          Integrasikan Google Maps embed di sini<br>
+          <code style="font-size:12px;color:var(--gray2)">&lt;iframe src="https://maps.app.goo.gl/KDspkr82Sb3jgKoJ9" &gt;</code>
+        </div>
+        <a href="https://maps.google.com" target="_blank" class="map-btn" style="margin-top:1rem">
+          🗺️ Buka di Google Maps
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand-name">WAS<span>GARAGE</span> MANADO</div>
+      <p class="footer-brand-desc">Bengkel mobil profesional dan terpercaya di Sulawesi Utara. Melayani perawatan dan perbaikan semua merek kendaraan dengan standar tinggi.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/wanli.soromgan.5" title="Facebook">📘</a>
+        <a href="http://www.instagram.com/wanli_autoservice?igsh=MxByNXUOcGZ4ZW95Yg==" title="Instagram">📷</a>
+        <a href="https://wa.me/6281356557167" title="WhatsApp">💬</a>
+     </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Layanan</div>
+      <ul class="footer-links">
+        <li><a href="#layanan">Tune-Up Mesin</a></li>
+        <li><a href="#layanan">Ganti Oli</a></li>
+        <li><a href="#layanan">Kaki-Kaki</a></li>
+        <li><a href="#layanan">Service AC</a></li>
+        <li><a href="#layanan">Diagnostic Scan ECU</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigasi</div>
+      <ul class="footer-links">
+        <li><a href="#home">Beranda</a></li>
+        <li><a href="#tentang">Tentang Kami</a></li>
+        <li><a href="#galeri">Galeri</a></li>
+        <li><a href="#testimoni">Testimoni</a></li>
+        <li><a href="#booking">Booking</a></li>
+        <li><a href="#lokasi">Lokasi</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Kontak</div>
+      <ul class="footer-links">
+        <li><a href="tel:+6281356557167">📞 +62 81356557167</a></li>
+        <li><a href="https://wa.me/6281356557167">💬 WhatsApp</a></li>
+        <li><a href="wanlisorongan@gmail.com">✉️ Email Kami</a></li>
+        <li><a href="#lokasi">📍Jl. Pramuka No.72 (SMK Kr. Getsemani) Sario Kotabaru, Sario, Kota Manado</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2025 <span>Jefmanado</span> · Sulawesi Utara · All rights reserved.</p>
+    <p class="footer-copy" style="font-size:12px">Graphic and Web design</p>
+  </div>
+</footer>
+
+<!-- FLOATING WA -->
+<div class="wa-float">
+  <div class="wa-label">Chat WhatsApp</div>
+  <a href="https://wa.me/6281356557167?text=Halo%20WASGARAGE%2C%20saya%20ingin%20booking%20service" class="wa-btn" target="_blank" title="Chat WhatsApp">💬</a>
+</div>
+
+<script>
+  // Hamburger menu
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+  function closeMenu() {
+    document.getElementById('mobileMenu').classList.remove('open');
+  }
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(r => observer.observe(r));
+
+  // Booking form submit
+  function submitBooking() {
+    const nama = document.querySelector('input[placeholder="Contoh: Budi Santoso"]').value;
+    const wa = document.querySelector('input[placeholder="0812-xxxx-xxxx"]').value;
+    const mobil = document.querySelector('input[placeholder="Contoh: Toyota Avanza"]').value;
+    const plat = document.querySelector('input[placeholder="DB xxxx xx"]').value;
+    if (!nama || !wa || !mobil) {
+      alert('Mohon lengkapi nama, nomor WhatsApp, dan jenis kendaraan Anda.');
+      return;
+    }
+    const msg = encodeURIComponent(
+      `Halo WAS Garage Garage, saya ingin booking service:\n\n` +
+      `Nama: ${nama}\n` +
+      `No. WA: ${wa}\n` +
+      `Kendaraan: ${mobil} (${plat})\n\n` +
+      `Mohon konfirmasi ketersediaan slot. Terima kasih!`
+    );
+    window.open(`https://wa.me/6281356557167?text=${msg}`, '_blank');
+  }
+
+  // Navbar scroll effect
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    nav.style.background = window.scrollY > 40
+      ? 'rgba(10,10,10,0.98)'
+      : 'rgba(10,10,10,0.92)';
+  });
+
+  // Set min date for booking to today
+  const dateInput = document.querySelector('input[type="date"]');
+  if (dateInput) {
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.min = today;
+    dateInput.value = today;
+  }
+</script>
+</body>
+</html>
